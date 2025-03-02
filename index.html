@@ -6,149 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sports Wear Company</title>
-    <style>
-        /* Reset some default styles */
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background: transparent;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: opacity 0.3s ease;
-        }
-
-        header.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .hamburger-menu {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .sidebar {
-            height: 100vh;
-            width: 250px;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: -250px;
-            transition: left 0.3s ease;
-            z-index: 1001;
-            padding-top: 60px;
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
-        .sidebar .close-btn {
-            position: absolute;
-            top: 10px;
-            left: 90%;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar ul li {
-            padding: 15px 20px;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .sidebar ul li:hover {
-            background-color: #333;
-        }
-
-        .logo {
-            position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .logo img {
-            width: 500px;
-            height: 500px;
-        }
-
-        .landing-section {
-            height: 100vh;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0)), url('images/bg-landing.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            /* Moves content to the bottom */
-            align-items: center;
-            text-align: center;
-            position: relative;
-
-            /* Adjust as needed for spacing */
-        }
-
-        .landing-text {
-            width: 100%;
-            background-color: black;
-            color: white;
-            padding: 20px 0;
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        .about-us {
-            height: 100vh;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/about-us-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-        }
-
-        .about-text {
-            padding: 30px;
-            top: 40%;
-            transform: translateY(50%);
-        }
-
-        .about-footer {
-            width: 100%;
-            background-color: black;
-            color: white;
-            padding: 20px 0;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -191,22 +49,45 @@
                 and professionalism, with durable materials that stand up to daily wear.</p>
         </div>
         <div class="about-footer">
-            <p>Aim for excellence achieve with power</p>
+            Aim for excellence achieve with power
         </div>
     </section>
-    <section class="about-us" id="about-us">
-        <div class="about-text">
-            <h2>About Us</h2>
-            <p>Develop a branding concept for a business specializing in high-quality sportswear and school uniforms.
-                The brand should convey a sense of versatility, blending style, comfort, and durability.
-                The sportswear side should focus on performance-driven apparel for athletes,
-                with features like moisture-wicking fabric, breathability, and flexibility,
-                while the school uniforms should emphasize neatness, comfort,
-                and professionalism, with durable materials that stand up to daily wear.</p>
+    <section class="our-products" id="our-products">
+
+        <div class="our-products-main">
+            <img src="images/our-products-bg.jpg" alt="Our Products Background" class="bg-image">
+            <h2>Our Products</h2>
+            <div class="our-product-container">
+                <div class="our-product-tile">
+                    <img src="images/about-us-bg.jpg" />
+                    <p>Sports Wear</p>
+
+                </div>
+                <div class="our-product-tile">
+                    <img src="images/about-us-bg.jpg" />
+                    <p>Sports Wear</p>
+
+                </div>
+                <div class="our-product-tile">
+                    <img src="images/about-us-bg.jpg" />
+                    <p>Sports Wear</p>
+
+                </div>
+            </div>
         </div>
-        <div class="about-footer">
-            <p>Aim for excellence achieve with power</p>
+
+    </section>
+    <section class="contact-us" id="contact-us">
+        <div class="contact-container">
+            <div class="contact-text">
+                <h1>Your Best Performance, Our Priority</h1>
+                <h2>Be Unstoppable With Aims Sportswear</h2>
+            </div>
+            <div class="contact-us-button">
+                <button>Contact Us</button>
+            </div>
         </div>
+
     </section>
 
     <script>

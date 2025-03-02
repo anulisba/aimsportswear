@@ -1,0 +1,276 @@
+ /* Reset some default styles */
+ body,
+ html {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+     overflow-x: hidden;
+     background-color: black;
+ }
+
+ header {
+     display: flex;
+     justify-content: space-between;
+     padding: 10px 20px;
+     background: transparent;
+     color: white;
+     position: fixed;
+     width: 100%;
+     top: 0;
+     z-index: 1000;
+     transition: opacity 0.3s ease;
+ }
+
+ header.hidden {
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ .hamburger-menu {
+     font-size: 24px;
+     cursor: pointer;
+ }
+
+ .sidebar {
+     height: 100vh;
+     width: 250px;
+     background-color: black;
+     position: fixed;
+     top: 0;
+     left: -250px;
+     transition: left 0.3s ease;
+     z-index: 1001;
+     padding-top: 60px;
+ }
+
+ .sidebar.active {
+     left: 0;
+ }
+
+ .sidebar .close-btn {
+     position: absolute;
+     top: 10px;
+     left: 90%;
+     font-size: 24px;
+     color: white;
+     cursor: pointer;
+ }
+
+ .sidebar ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .sidebar ul li {
+     padding: 15px 20px;
+     color: white;
+     font-size: 18px;
+     cursor: pointer;
+ }
+
+ .sidebar ul li:hover {
+     background-color: #333;
+ }
+
+ .logo {
+     position: absolute;
+     top: -10%;
+     left: 50%;
+     transform: translateX(-50%);
+ }
+
+ .logo img {
+     width: 500px;
+     height: 500px;
+ }
+
+ .landing-section {
+     height: 100vh;
+     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0)), url('images/bg-landing.jpg');
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+     /* Moves content to the bottom */
+     align-items: center;
+     text-align: center;
+     position: relative;
+
+     /* Adjust as needed for spacing */
+ }
+
+ .landing-text {
+     width: 100%;
+     background-color: black;
+     color: white;
+     padding: 20px 0;
+     font-size: 2em;
+     font-weight: bold;
+ }
+
+ .about-us {
+     height: 100vh;
+     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/about-us-bg.jpg');
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     text-align: left;
+ }
+
+ .about-text {
+     padding: 30px;
+     top: 40%;
+     transform: translateY(50%);
+ }
+
+ .about-footer {
+     width: 100%;
+     background-color: black;
+     color: white;
+     padding: 20px 0;
+     height: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 2em;
+     font-weight: bold;
+ }
+
+ .our-products {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+ }
+
+ .bg-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     /* Ensures full coverage without distortion */
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: -1;
+ }
+
+
+
+ .our-products-main {
+     text-align: center;
+     padding: 50px 20px;
+ }
+
+ .our-product-container {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     flex-wrap: wrap;
+     /* Ensures wrapping on smaller screens */
+ }
+
+ .our-product-tile {
+     background: #f8f8f8;
+     border-radius: 10px;
+     padding: 20px;
+     text-align: center;
+     width: 300px;
+     /* Fixed width for desktop */
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+
+ .our-product-tile img {
+     width: 100%;
+     border-radius: 10px;
+     height: auto;
+ }
+
+ .our-product-tile p {
+     font-size: 1.2em;
+     font-weight: bold;
+     margin-top: 10px;
+ }
+
+ .contact-us {
+     height: 100vh;
+     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/contact-us-bg.jpg');
+     background-size: cover;
+     background-position: center;
+ }
+
+ .contact-container {
+     text-align: center;
+     padding-top: 50px;
+     transform: translateY(110%);
+ }
+
+ .contact-text h1 {
+     background: white;
+     color: black;
+
+     font-size: 2rem;
+     font-weight: bold;
+     padding: 50px;
+     display: inline-block;
+     width: 100%;
+
+     /* Adjust width for readability */
+ }
+
+ .contact-text h2 {
+     color: white;
+     font-size: 1.5rem;
+     font-weight: normal;
+     margin-top: -15px;
+     /* Removes extra gap between h1 and h2 */
+ }
+
+ .contact-us-button {
+     margin-top: 30px;
+     /* Space between text and button */
+ }
+
+ .contact-us-button button {
+     background: orange;
+     color: black;
+     font-size: 1.2rem;
+     font-weight: bold;
+     padding: 15px 30px;
+     border-radius: 15px;
+     border: none;
+     cursor: pointer;
+     transition: background 0.3s ease;
+ }
+
+ .contact-us-button button:hover {
+     background: darkorange;
+ }
+
+
+ @media (max-width: 1024px) {
+     .our-product-container {
+         gap: 20px;
+     }
+
+     .our-product-tile {
+         width: 280px;
+         /* Slightly smaller for tablets */
+     }
+ }
+
+ @media (max-width: 768px) {
+     .our-product-container {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .our-product-tile {
+         width: 90%;
+         /* Takes full width on mobile */
+     }
+ }
