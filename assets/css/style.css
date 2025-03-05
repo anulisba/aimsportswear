@@ -1,10 +1,19 @@
+@font-face {
+    font-family: 'CustomFont';
+    /* Choose any name */
+    src: url('/assets/fonts/CenturyGothic.woff') format('woff');
+    /* Adjust path if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body,
 html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'CustomFont', sans-serif;
     overflow-x: hidden;
-    background-color: rgb(249, 248, 248);
+    background-color: rgb(0, 0, 0);
 }
 
 header {
@@ -86,7 +95,7 @@ header.hidden {
 
 .landing-section {
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0)), url('/images/bg-landing.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0)), url('/assets/images/bg-landing.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -105,15 +114,23 @@ header.hidden {
     background-color: black;
     color: white;
     padding: 20px 0;
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 10px;
+}
+
+.capital {
+    font-size: 35px;
+    font-weight: 100;
+    letter-spacing: 10px;
 }
 
 .about-us {
-    height: 100vh;
+
     /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/about-us-bg.jpg');
         background-size: cover;
         background-position: center; */
+    background-color: #f8f8f8;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -127,9 +144,10 @@ header.hidden {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    margin-top: 100px;
     flex-wrap: wrap;
     padding: 4rem 0;
-    max-width: 1200px;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -138,14 +156,13 @@ header.hidden {
 
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     animation: slideInLeft 1s ease-out forwards;
     opacity: 0;
 }
 
 .about-image img {
-    width: 300px;
+    width: 600px;
     height: auto;
     display: block;
     transition: transform 0.3s ease;
@@ -164,10 +181,15 @@ header.hidden {
 }
 
 .about-text h2 {
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #333;
     margin-bottom: 1.5rem;
-    font-weight: 700;
+    font-weight: 200;
+    letter-spacing: 5px;
+}
+
+.h2-capital {
+    font-size: 45px;
 }
 
 .about-text p {
@@ -175,6 +197,21 @@ header.hidden {
     line-height: 1.8;
     color: #666;
     margin-bottom: 1.5rem;
+}
+
+.contact-us-button {
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 10px 50px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.contact-us-button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
 }
 
 /* Animations */
@@ -202,26 +239,6 @@ header.hidden {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        padding: 2rem;
-    }
-
-    .about-image,
-    .about-text {
-        flex: 1 1 100%;
-    }
-
-    .about-text {
-        padding: 1rem 0;
-    }
-
-    .about-text h2 {
-        font-size: 2rem;
-    }
-}
 
 /* Add fade-in animation for paragraphs */
 .about-text p {
@@ -238,22 +255,19 @@ header.hidden {
 
 .about-footer {
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
     padding: 20px 0;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 10px;
 }
 
 .our-products {
-    height: 150vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/our-products-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: #f8f8f8;
 }
 
 
@@ -261,93 +275,188 @@ header.hidden {
 .our-products-main {
     text-align: center;
     padding: 50px 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.our-products-main h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #333;
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+
 }
 
 .our-product-container {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-top: 100px;
+    margin-bottom: 60px;
     flex-wrap: wrap;
-    /* Ensures wrapping on smaller screens */
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 .our-product-tile {
     background: #f8f8f8;
-    border-radius: 10px;
-    padding: 20px;
     text-align: center;
-    width: 300px;
+    width: 400px;
+    height: 500px;
     /* Fixed width for desktop */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUpFromBottom 0.8s ease-out forwards;
+}
+
+.our-product-tile:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.our-product-tile:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.our-product-tile:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes slideUpFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .our-product-tile img {
     width: 100%;
-    border-radius: 10px;
-    height: auto;
+    height: 400px;
+    border-radius: 0;
+    object-fit: cover;
+
 }
 
 .our-product-tile p {
     font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: lighter;
+    margin-top: 30px;
 }
 
 .contact-us {
-    height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/contact-us-bg.jpg');
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/assets/images/contact\ \(2\).jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
 }
 
 .contact-container {
-    text-align: center;
-    padding-top: 50px;
-    transform: translateY(110%);
+
+    width: 100% !important;
+    /* Ensures a readable width */
+
+    transform: translateY(100%);
+    /* Removed unnecessary transform */
 }
 
 .contact-text h1 {
     background: white;
     color: black;
-
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 50px;
-    display: inline-block;
+    border-bottom: 2px solid #333;
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: 100;
+    padding: 15px;
     width: 100%;
-
-    /* Adjust width for readability */
+    letter-spacing: 5px;
+    margin-bottom: 10px;
 }
 
 .contact-text h2 {
     color: white;
-    font-size: 1.5rem;
+    font-size: clamp(16px, 3vw, 25px);
     font-weight: normal;
-    margin-top: -15px;
-    /* Removes extra gap between h1 and h2 */
+    margin-top: -5px;
+    letter-spacing: 3px;
 }
 
-.contact-us-button {
-    margin-top: 30px;
-    /* Space between text and button */
-}
-
-.contact-us-button button {
-    background: orange;
-    color: black;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 15px 30px;
-    border-radius: 15px;
-    border: none;
+.contact-us-section-button {
+    padding: 10px 40px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: clamp(14px, 2vw, 18px);
+    letter-spacing: 3px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.contact-us-button button:hover {
-    background: darkorange;
+.contact-us-section-button:hover {
+    background: white;
+    color: black;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 90%;
+    }
+
+    .contact-text h1 {
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+
+    .contact-text h2 {
+        font-size: 18px;
+    }
+
+    .contact-us-section-button {
+        font-size: 16px;
+        padding: 8px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-text h1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .contact-text h2 {
+        font-size: 16px;
+    }
+
+    .contact-us-section-button {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
 
 @media (max-width: 1024px) {
     .our-product-container {
@@ -370,4 +479,134 @@ header.hidden {
         width: 90%;
         /* Takes full width on mobile */
     }
+}
+
+/* Add viewport-friendly base sizing */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Improved responsive font handling */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Mobile-first header adjustments */
+
+
+/* Added breakpoints for various screen sizes */
+@media (max-width: 1024px) {
+    .logo img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        top: -2%;
+    }
+
+    .logo img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .landing-text,
+    .about-footer {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .capital {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+
+    .about-content {
+
+        padding: 2rem;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 1 1 100%;
+    }
+
+    .about-text {
+        padding: 1rem 0;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hamburger-menu {
+        font-size: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .landing-text,
+    .about-footer {
+        padding: 10px 0;
+        letter-spacing: 2px;
+    }
+
+    .capital {
+        font-size: 1.2rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-us-button button {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* Touch optimization */
+button,
+.hamburger-menu,
+.sidebar ul li {
+    touch-action: manipulation;
+}
+
+/* Prevent mobile zoom on input */
+@media (max-width: 768px) {
+
+    input,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+/* Performance optimizations */
+img {
+    will-change: transform;
 }
